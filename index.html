@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firestore Example</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+</head>
+
+<body>
+    <h1>Best cafés in Skopje</h1>
+
+    <div class="content">
+        <form id="add-cafe-form">
+            <input type="text" name="name" placeholder="Café name">
+            <input type="text" name="location" placeholder="Café location">
+            <button>Add a café</button>
+        </form>
+
+        <ul id="cafe-list">
+
+        </ul>
+    </div>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyD0WDTZ5LrWADj6wHI-v3MoAtHjM6Mbt5c",
+            authDomain: "fir-project-96c52.firebaseapp.com",
+            projectId: "fir-project-96c52",
+            storageBucket: "fir-project-96c52.appspot.com",
+            messagingSenderId: "390751391638",
+            appId: "1:390751391638:web:b6880eecad0594ad5ad7b7",
+            measurementId: "G-B5XTQ45NJX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        const db = firebase.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
